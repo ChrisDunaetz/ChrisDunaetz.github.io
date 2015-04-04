@@ -242,7 +242,7 @@ header .background1 {
     header .background1 nav .nav-line1 {
       padding: 20px; }
       header .background1 nav .nav-line1 .name {
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 400;
         font-family: "Montserrat", sans-serif;
         letter-spacing: 0.45em;
@@ -277,6 +277,20 @@ header .background1 {
       -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
       transform: translateX(-50%); }
+    header .background1 .logo-holder .down-arrow {
+      height: 50px;
+      width: 50px;
+      position: relative;
+      left: 50%;
+      padding-top: 230px;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%); }
+      header .background1 .logo-holder .down-arrow a {
+        height: 50px;
+        width: 100%;
+        position: absolute;
+        z-index: 1; }
   header .background1 .Title {
     position: absolute;
     margin-top: 420px;
@@ -369,10 +383,23 @@ header .background1 {
       padding-top: 400px;
       padding-left: 200px; }
 
-.about-me-section {
-  height: 900px;
+.spacer {
+  height: 200px;
   width: 100%;
-  background-color: black;
+  background-color: #535353; }
+  .spacer .about-title {
+    text-transform: uppercase;
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0.5em;
+    font-family: "Montserrat", sans-serif;
+    padding-top: 90px; }
+
+.about-me-section {
+  height: 700px;
+  width: 100%;
   padding-top: 50px; }
   .about-me-section .face-img {
     background-repeat: no-repeat;
@@ -381,9 +408,16 @@ header .background1 {
     background-size: cover;
     border-radius: 50%;
     margin: auto; }
+  .about-me-section .text-container {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    max-width: 640px;
+    font-size: 24px; }
 
 .to-top-bar-section {
-  height: 200px;
+  height: 80px;
   background-color: black; }
   .to-top-bar-section .up-arrow {
     height: 50px;
@@ -401,3 +435,34 @@ header .background1 {
     z-index: 1; }
     .to-top-bar-section a:hover {
       background-color: rgba(255, 255, 255, 0.2); }
+
+.footer1 {
+  background-color: #262626;
+  height: 200px; }
+  .footer1 .block {
+    width: 300px;
+    margin: auto;
+    padding: 30px 550px 100px 50px;
+    color: white;
+    letter-spacing: 0.15em; }
+    .footer1 .block .title {
+      font-size: 25px;
+      font-weight: 800;
+      padding: 0 0 20px 0; }
+    .footer1 .block .text {
+      font-size: 17px;
+      font-weight: 800; }
+      .footer1 .block .text a {
+        color: white; }
+        .footer1 .block .text a:hover {
+          color: rgba(255, 255, 255, 0.5); }
+
+.footer2 {
+  background-color: black;
+  color: #B3B3B3;
+  height: 50px;
+  padding-left: 100px;
+  padding-top: 15px; }
+  .footer2 .text-copyright {
+    font-size: 14px;
+    font-weight: 300; }

@@ -2,9 +2,11 @@
 $(document).ready(function() {
     $(window).stellar();
     
+    
 });
 
-/*$(document).ready(
+/*
+$(document).ready(
 
   function() { 
 
@@ -12,10 +14,10 @@ $(document).ready(function() {
         cursorcolor:"rgba(30,30,30,.5)",
         zindex:999,
         scrollspeed:100,
-        mousescrollstep:30,
+        mousescrollstep:10,
         cursorborder:"0px solid #fff",
     });
-      
+    
 
   }
 
