@@ -232,6 +232,7 @@ header .background1 {
   background-size: cover;
   background-attachment: fixed; }
   header .background1 nav {
+    position: fixed;
     padding: 0 0 0 0;
     width: 100%;
     background-color: rgba(150, 150, 150, 0.4);
