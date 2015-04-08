@@ -1,0 +1,13 @@
+.navbar-default .navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .45em;
+  text-transform: uppercase;
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .45em;
+  text-transform: uppercase;
+  color: white;
+}

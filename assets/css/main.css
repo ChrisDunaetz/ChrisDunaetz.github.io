@@ -228,8 +228,7 @@ body {
 
 header .background1 {
   height: 700px;
-  background: #000000;
-  background-image: url(../img/1ptLine-01.png);
+  background-image: url(../img/Background-paint-dark60.png);
   background-size: cover;
   background-attachment: fixed; }
   header .background1 nav {
@@ -237,8 +236,9 @@ header .background1 {
     padding: 0 40px 0 0;
     width: 100%;
     height: 70px;
-    background-color: rgba(245, 245, 245, 0.9);
-    z-index: 1; }
+    background-color: rgba(150, 150, 150, 0.4);
+    z-index: 1;
+    border: none; }
     header .background1 nav .nav-line1 {
       padding: 20px; }
       header .background1 nav .nav-line1 .name {
@@ -247,14 +247,14 @@ header .background1 {
         font-family: "Montserrat", sans-serif;
         letter-spacing: 0.45em;
         text-transform: uppercase;
-        color: #535353;
+        color: white;
         padding-top: 0px; }
       header .background1 nav .nav-line1 .mini-nav {
         clear: both;
         float: right;
         padding-top: 5px; }
         header .background1 nav .nav-line1 .mini-nav a {
-          color: #535353;
+          color: white;
           display: inline-block;
           margin-left: 30px;
           text-transform: uppercase;
@@ -301,7 +301,7 @@ header .background1 {
     transform: translateX(-50%);
     font-size: 70px;
     font-family: "Kaushan Script", "Montserrat", sans-serif;
-    color: #535353; }
+    color: white; }
   header .background1 .subtitle {
     position: absolute;
     margin-top: 520px;
@@ -310,7 +310,7 @@ header .background1 {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    color: #808080;
+    color: white;
     font-size: 20px;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
@@ -318,7 +318,7 @@ header .background1 {
     letter-spacing: 0.3em; }
 
 .portfolio-section .background-portfolio {
-  height: 900px;
+  height: auto;
   background: url(../img/1ptLine-01.png);
   background-size: cover;
   background-attachment: fixed;
@@ -326,7 +326,7 @@ header .background1 {
   .portfolio-section .background-portfolio .spacer {
     height: 200px;
     width: 100%;
-    background-color: #535353; }
+    background-color: rgba(0, 0, 0, 0.87); }
     .portfolio-section .background-portfolio .spacer .portfolio-title {
       text-transform: uppercase;
       text-align: center;
@@ -346,7 +346,6 @@ header .background1 {
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
-    margin: 0 100px 0 100px;
     -webkit-box-align: center;
     -moz-box-align: center;
     box-align: center;
@@ -365,29 +364,35 @@ header .background1 {
     -o-justify-content: space-around;
     justify-content: space-around;
     -ms-flex-pack: center; }
-    .portfolio-section .background-portfolio .main-body .tadpole-casing .tadpole-pic {
+    .portfolio-section .background-portfolio .main-body .row .tadpole-casing .tadpole-pic {
       margin: auto;
       height: 600px;
       width: 300px;
       background-image: url(../img/TadpoleiPhone6-02.png);
       background-size: cover; }
-    .portfolio-section .background-portfolio .main-body .offsette-casing .offsette-pic {
+    .portfolio-section .background-portfolio .main-body .row .wazza-space {
+      height: 1px;
+      width: 300px; }
+    .portfolio-section .background-portfolio .main-body .row .offsette-casing .offsette-pic {
       margin: auto;
       height: 600px;
       width: 300px;
       background-image: url(../img/OffsettteiPhone6-02.png);
       background-size: cover; }
-    .portfolio-section .background-portfolio .main-body .app-store-logo {
+    .portfolio-section .background-portfolio .main-body .row .app-store-logo {
       height: auto;
       position: absolute;
       padding-top: 400px;
       padding-left: 200px; }
 
-.spacer {
+.spacer-about-me {
   height: 200px;
   width: 100%;
-  background-color: #535353; }
-  .spacer .about-title {
+  background: url(../img/dark-paints.png);
+  background-size: cover;
+  background-attachment: fixed;
+  repeat: no-repeat; }
+  .spacer-about-me .about-title {
     text-transform: uppercase;
     text-align: center;
     margin: auto;
@@ -400,6 +405,8 @@ header .background1 {
 .about-me-section {
   height: 700px;
   width: 100%;
+  background-color: black;
+  color: white;
   padding-top: 50px; }
   .about-me-section .face-img {
     background-repeat: no-repeat;
@@ -439,22 +446,22 @@ header .background1 {
 .footer1 {
   background-color: #262626;
   height: 200px; }
-  .footer1 .block {
+  .footer1 .block1 {
     width: 300px;
     margin: auto;
     padding: 30px 550px 100px 50px;
     color: white;
     letter-spacing: 0.15em; }
-    .footer1 .block .title {
+    .footer1 .block1 .title {
       font-size: 25px;
       font-weight: 800;
       padding: 0 0 20px 0; }
-    .footer1 .block .text {
+    .footer1 .block1 .contact-text {
       font-size: 17px;
       font-weight: 800; }
-      .footer1 .block .text a {
+      .footer1 .block1 .contact-text a {
         color: white; }
-        .footer1 .block .text a:hover {
+        .footer1 .block1 .contact-text a:hover {
           color: rgba(255, 255, 255, 0.5); }
 
 .footer2 {
