@@ -234,7 +234,6 @@ header .background1 {
   header .background1 nav {
     padding: 0 0 0 0;
     width: 100%;
-    height: 70px;
     background-color: rgba(150, 150, 150, 0.4);
     z-index: 1;
     border: none; }
@@ -381,8 +380,8 @@ header .background1 {
     .portfolio-section .background-portfolio .main-body .row .app-store-logo {
       height: auto;
       position: absolute;
-      padding-top: 400px;
-      padding-left: 200px; }
+      padding-top: 360px;
+      padding-left: 160px; }
 
 .spacer-about-me {
   height: 200px;
@@ -447,7 +446,7 @@ header .background1 {
   .footer1 .block1 {
     height: 200px;
     width: 100%;
-    margin: auto;
+    margin-left: 5%;
     color: white;
     letter-spacing: 0.15em; }
     .footer1 .block1 .title {
@@ -465,9 +464,10 @@ header .background1 {
 .footer2 {
   background-color: black;
   color: #B3B3B3;
-  height: 50px;
-  padding-left: 100px;
-  padding-top: 15px; }
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px; }
   .footer2 .text-copyright {
+    margin-left: 5%;
     font-size: 14px;
     font-weight: 300; }
