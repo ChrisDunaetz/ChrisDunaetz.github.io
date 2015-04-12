@@ -230,7 +230,28 @@ header .background1 {
   height: 700px;
   background-image: url(../img/Background-paint-dark60.png);
   background-size: cover;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  /*.down-arrow
+   * height: 50px
+   * width: 50px
+   * //position: absolute
+   * //margin: auto
+   * //margin-top: 620px
+   *
+   * //position: absolute
+   *
+   * padding-top: 520px
+   * margin: auto
+   * z-index: +1
+   *
+   *
+   *
+   * a
+   * 	//height: 50px
+   * 	//width: 100%
+   * 	//position: absolute
+   * 	//z-index: +1
+   */ }
   header .background1 nav {
     position: fixed;
     padding: 0 0 0 0;
@@ -276,20 +297,6 @@ header .background1 {
       -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
       transform: translateX(-50%); }
-    header .background1 .logo-holder .down-arrow {
-      height: 50px;
-      width: 50px;
-      position: relative;
-      left: 50%;
-      padding-top: 230px;
-      -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      transform: translateX(-50%); }
-      header .background1 .logo-holder .down-arrow a {
-        height: 50px;
-        width: 100%;
-        position: absolute;
-        z-index: 1; }
   header .background1 .Title {
     position: absolute;
     margin-top: 420px;

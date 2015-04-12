@@ -16,9 +16,3 @@
 .navbar-default .navbar-nav>li>a:hover {
   color: rgba(180,180,180,.8);
 }
-
-.sudo-bar {
-	width: auto;
-	height: auto;
-	background-color: blue;
-}
