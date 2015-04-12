@@ -235,7 +235,7 @@ header .background1 {
     position: fixed;
     padding: 0 0 0 0;
     width: 100%;
-    background-color: rgba(150, 150, 150, 0.4);
+    background-color: rgba(150, 150, 150, 0.3);
     z-index: 1;
     border: none; }
     header .background1 nav .nav-line1 {
@@ -447,14 +447,15 @@ header .background1 {
   .footer1 .block1 {
     height: 200px;
     width: 100%;
-    margin-left: 5%;
     color: white;
     letter-spacing: 0.15em; }
     .footer1 .block1 .title {
+      margin-left: 5%;
       font-size: 25px;
       font-weight: 800;
       padding: 0 0 20px 0; }
     .footer1 .block1 .contact-text {
+      margin-left: 5%;
       font-size: 17px;
       font-weight: 800; }
       .footer1 .block1 .contact-text a {

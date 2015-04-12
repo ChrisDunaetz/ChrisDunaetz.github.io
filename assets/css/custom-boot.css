@@ -10,9 +10,15 @@
   letter-spacing: .45em;
   text-transform: uppercase;
   color: white;
+
 }
 
-.nav {
-	
-	//background-color: rgba(150,150,150,.3)
+.navbar-default .navbar-nav>li>a:hover {
+  color: rgba(180,180,180,.8);
+}
+
+.sudo-bar {
+	width: auto;
+	height: auto;
+	background-color: blue;
 }
