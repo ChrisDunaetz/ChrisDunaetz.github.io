@@ -310,7 +310,7 @@ header .background1 {
     color: white; }
   header .background1 .subtitle {
     position: absolute;
-    margin-top: 520px;
+    margin-top: 530px;
     text-align: center;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -320,8 +320,21 @@ header .background1 {
     font-size: 20px;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 0.3em; }
+
+.spacer {
+  height: 200px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.87); }
+  .spacer .portfolio-title {
+    text-transform: uppercase;
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0.5em;
+    font-family: "Montserrat", sans-serif;
+    padding-top: 90px; }
 
 .portfolio-section .background-portfolio {
   height: auto;
@@ -329,19 +342,6 @@ header .background1 {
   background-size: cover;
   background-attachment: fixed;
   repeat: no-repeat; }
-  .portfolio-section .background-portfolio .spacer {
-    height: 200px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.87); }
-    .portfolio-section .background-portfolio .spacer .portfolio-title {
-      text-transform: uppercase;
-      text-align: center;
-      margin: auto;
-      color: white;
-      font-size: 20px;
-      letter-spacing: 0.5em;
-      font-family: "Montserrat", sans-serif;
-      padding-top: 90px; }
   .portfolio-section .background-portfolio .main-body {
     padding-top: 100px;
     display: inline-block;
@@ -456,7 +456,7 @@ header .background1 {
     width: 100%;
     color: white;
     letter-spacing: 0.15em; }
-    .footer1 .block1 .title {
+    .footer1 .block1 .contact-title-email {
       margin-left: 5%;
       font-size: 25px;
       font-weight: 800;
