@@ -16,3 +16,11 @@
 .navbar-default .navbar-nav>li>a:hover {
   color: rgba(180,180,180,.8);
 }
+
+
+@media only screen and (max-width: 940px) {
+	.navbar-default .navbar-brand {
+  font-size: 0px;
+}
+
+}
