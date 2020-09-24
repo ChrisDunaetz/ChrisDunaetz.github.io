@@ -2,7 +2,7 @@
   "applinks": {
       "details": [
            {
-             "appIDs": [ "com.disney.AppClip-tester" ],
+             "appIDs": [ "com.disney.CoreML-Sky-Segmentation-Xcode-11" ],
              "components": [
                {
                   "#": "no_universal_links",
@@ -28,9 +28,9 @@
        ]
    },
    "webcredentials": {
-      "apps": [ "com.disney.AppClip-tester" ]
+      "apps": [ "com.disney.CoreML-Sky-Segmentation-Xcode-11" ]
    },
    "appclips": {
-      "apps": [ "com.disney.AppClip-tester" ]
+      "apps": [ "com.disney.CoreML-Sky-Segmentation-Xcode-11.Clip" ]
    }
 }
