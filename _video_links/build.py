@@ -9,7 +9,7 @@ Usage (from this folder): python build.py
 Writes <slug>/index.html at the repo root (served at https://chrisdunaetz.github.io/<slug>/).
 Custom thumbnails go in ../thumbs/<slug>.jpg or .png (16:9 or 1200x627); until then the YouTube thumbnail is used.
 This folder starts with "_", so GitHub Pages (Jekyll) doesn't publish it.
-The repo's own index.html (the old portfolio page) is left alone.
+The home page (index.html), llms.txt, robots.txt and sitemap.xml are hand-written; the 2015 site lives in archives/2015/.
 """
 import html
 from pathlib import Path

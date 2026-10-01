@@ -1,0 +1,52 @@
+# Chris Dunaetz
+
+> Senior software engineer who makes demanding workloads run fast on real hardware: real-time 3D, stereoscopic video and on-device AI, taken from prototype to launch on Apple Vision Pro and Meta Quest at The Walt Disney Company (2019-present). iOS developer since 2015. Looking to bring GPU and parallel-compute experience to AI. Based in the Los Angeles area; open to remote or hybrid roles in Southern California.
+
+## Links
+
+- [Website](https://chrisdunaetz.github.io/)
+- [LinkedIn](https://www.linkedin.com/in/chrisdunaetz)
+- [GitHub](https://github.com/ChrisDunaetz)
+
+## Technical highlights (Disney)
+
+- 96 FPS on Meta Quest 3 rendering a 3D environment around a 4K stereo film at 48 FPS, on an XR2 Gen 2 that also runs tracking and passthrough, with about half the peak GPU compute of Vision Pro's M2.
+- Under 200 ms from tap to first frame on average for 800 MB environments on Vision Pro, using GPU-ready ASTC/KTX textures, front-half-first loading and deferred custom-shader compilation.
+- The Alien: Earth environment runs dynamic lighting, shadows, skeletal animation, particle simulation, vertex-displacement shaders, anisotropic reflections and volumetric lighting at the same time.
+- Foveated Gaussian splatting: moved a Metal splat renderer onto RealityKit through LowLevelMesh to gain foveated rendering and hybrid rendering with traditional meshes.
+- On-device AI: real-time semantic segmentation with custom PyTorch models on Core ML plus Metal shaders.
+
+## Projects (Disney)
+
+- Disney+ immersive viewing environments: led the effort to bring ILM-built 3D worlds into Disney+ as immersive viewing environments, announced in Apple's WWDC 2023 keynote and live on Vision Pro's launch day; primary engineer on the RealityKit runtime.
+- Alien: Earth on Vision Pro: brought FX's Alien: Earth environment to Vision Pro with little project structure; got the outside vendor's models and animation running in headset and hand-authored the dynamic lighting, particles and some of the sound. Featured by Apple in a 2025 Meet with Apple session.
+- Meta Quest port: ported the environments to Meta Quest in the new Meta Spatial SDK; rewrote surface and vertex shaders and built the test-bench app used to debug them for Quest and future Meta hardware.
+- Downloadable bundles: re-architected the environments into downloadable bundles, moving about 90% of their code out of the Disney+ app.
+- Built a 180-degree stereo video format ahead of Apple Immersive Video; rendered, encoded and shipped films in it.
+- Built a Vision Pro flight-sim test bench measuring which motions feel fun versus cause motion sickness.
+- Built the SwiftUI App Clip for Marvel's Eternals AR companion app.
+
+## Videos
+
+- [Disney+ viewing environments walkthrough (Spatial Insider)](https://www.youtube.com/watch?v=G1FZMo1BMIY&t=218s)
+- [Alien: Earth featured by Apple (Meet with Apple, 2025)](https://www.youtube.com/watch?v=muthEMhOq0Q&t=3493s)
+- [WWDC 2023 keynote, Disney+ on Vision Pro](https://www.youtube.com/watch?v=GYkq9Rgoj8E&t=6051s)
+
+## Earlier experience
+
+- Phunware, iOS Developer (2017-2019): led features and the largest UI overhaul for the FOXNOW, FXNOW and Nat Geo TV streaming apps (15M users).
+- Krue, Hairdoo and other startups, iOS Developer (2015-2017).
+
+## Talks
+
+- USD Summit, Pixar headquarters (2025): delivering Vision Pro runtime assets via USD in RealityKit.
+- Disgraph 2024 (Disney's internal graphics conference): co-presented the viewing-environment pipeline with ILM.
+
+## Skills
+
+- Graphics, video and AI: Metal, RealityKit, Meta Spatial SDK, OpenUSD, shaders, ASTC/KTX, GPU profiling, Gaussian splatting, video encoding, PyTorch, Core ML
+- Languages and tools: Swift, Python, C++, Objective-C, Claude Code, Cursor
+
+## Education
+
+- B.S. Business Administration, University of Southern California, 2014

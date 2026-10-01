@@ -1,0 +1,5 @@
+# Search engines and AI crawlers are welcome. The old site under /archives/ is marked noindex.
+User-agent: *
+Allow: /
+
+Sitemap: https://chrisdunaetz.github.io/sitemap.xml
