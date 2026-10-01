@@ -7,7 +7,7 @@ LinkedIn's preview crawler doesn't run JavaScript, so it never follows the forwa
 
 Usage (from this folder): python build.py
 Writes <slug>/index.html at the repo root (served at https://chrisdunaetz.github.io/<slug>/).
-Custom thumbnails go in ../thumbs/<slug>.jpg (1200x627); until then the YouTube thumbnail is used.
+Custom thumbnails go in ../thumbs/<slug>.jpg or .png (16:9 or 1200x627); until then the YouTube thumbnail is used.
 This folder starts with "_", so GitHub Pages (Jekyll) doesn't publish it.
 The repo's own index.html (the old portfolio page) is left alone.
 """
@@ -20,7 +20,7 @@ VIDEOS = [
     {
         "slug": "alien-earth",
         "title": "Alien: Earth on Apple Vision Pro, featured by Apple (Meet with Apple, 2025)",
-        "description": "Apple highlights the Alien: Earth immersive environment Chris Dunaetz delivered for FX on Disney+.",
+        "description": "Apple highlights the Alien: Earth environment on Disney+, which Chris Dunaetz brought to Vision Pro.",
         "youtube_id": "muthEMhOq0Q",
         "start_seconds": 3493,
     },
@@ -83,8 +83,8 @@ def main():
     for v in VIDEOS:
         page_url = f"{base}/{v['slug']}/"
         target = f"https://www.youtube.com/watch?v={v['youtube_id']}&t={v['start_seconds']}s"
-        thumb = site / "thumbs" / f"{v['slug']}.jpg"
-        image_url = (f"{base}/thumbs/{v['slug']}.jpg" if thumb.exists()
+        thumbs = [t for t in (site / "thumbs").glob(f"{v['slug']}.*") if t.suffix in (".jpg", ".png")]
+        image_url = (f"{base}/thumbs/{thumbs[0].name}" if thumbs
                      else f"https://i.ytimg.com/vi/{v['youtube_id']}/maxresdefault.jpg")
         out = site / v["slug"] / "index.html"
         out.parent.mkdir(exist_ok=True)
