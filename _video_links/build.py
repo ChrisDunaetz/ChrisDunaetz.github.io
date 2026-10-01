@@ -36,7 +36,7 @@ VIDEOS = [
         "title": "Apple announces the Disney+ viewing environments (WWDC 2023 keynote)",
         "description": "The WWDC 2023 keynote segment where Apple and Disney announced Disney+ for Apple Vision Pro.",
         "youtube_id": "GYkq9Rgoj8E",
-        "start_seconds": 6050,
+        "start_seconds": 6051,
     },
 ]
 
