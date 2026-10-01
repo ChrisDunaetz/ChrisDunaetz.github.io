@@ -6,7 +6,6 @@
 
 - [Website](https://chrisdunaetz.github.io/)
 - [LinkedIn](https://www.linkedin.com/in/chrisdunaetz)
-- [GitHub](https://github.com/ChrisDunaetz)
 
 ## Technical highlights (Disney)
 
