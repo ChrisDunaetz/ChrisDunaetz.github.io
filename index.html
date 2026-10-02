@@ -23,7 +23,7 @@
   "description": "Software engineer who makes demanding workloads run fast on real hardware: real-time 3D, stereoscopic video and on-device AI, from prototype to launch on Apple Vision Pro and Meta Quest.",
   "homeLocation": { "@type": "Place", "name": "Los Angeles area, California" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Southern California" },
-  "knowsAbout": ["GPU performance", "Metal", "RealityKit", "Meta Spatial SDK", "OpenUSD", "Shader programming", "GPU profiling", "Gaussian splatting", "Stereoscopic video", "Video encoding", "On-device AI", "PyTorch", "Core ML", "Swift", "Python", "C++", "Apple Vision Pro", "Meta Quest"],
+  "knowsAbout": ["GPU performance", "Metal", "RealityKit", "Meta Spatial SDK", "OpenUSD", "Shader programming", "GPU profiling", "Gaussian splatting", "Stereoscopic video", "Hardware video encoding", "VideoToolbox", "MV-HEVC", "Apple Immersive Video", "NVENC", "HLS streaming", "Color management", "P3 wide color", "YCbCr", "On-device AI", "PyTorch", "Core ML", "Swift", "Python", "C++", "Apple Vision Pro", "Meta Quest"],
   "sameAs": ["https://www.linkedin.com/in/chrisdunaetz"]
 }
 </script>
@@ -152,20 +152,21 @@
     <li><strong>Under 200 ms from tap to first frame</strong> on average for 800 MB environments on Vision Pro, using GPU-ready ASTC/KTX textures, front-half-first loading and deferred custom-shader compilation.</li>
     <li><strong>Alien: Earth environment</strong> runs dynamic lighting, shadows, skeletal animation, particle simulation, vertex-displacement shaders, anisotropic reflections and volumetric lighting at the same time.</li>
     <li><strong>Foveated Gaussian splatting:</strong> moved a Metal splat renderer onto RealityKit through LowLevelMesh to gain foveated rendering and hybrid rendering with traditional meshes.</li>
-    <li><strong>On-device AI:</strong> real-time semantic segmentation with custom PyTorch models on Core ML plus Metal shaders.</li>
+    <li><strong>On-device AI:</strong> real-time semantic segmentation with custom PyTorch models on Core ML, fed the YCbCr camera feed by custom Metal shaders.</li>
   </ul>
 
   <h3>Disney+ immersive viewing environments: Apple Vision Pro and Meta Quest</h3>
   <ul>
     <li>Led the effort to bring ILM-built 3D worlds into Disney+ as immersive viewing environments, announced in Apple's WWDC 2023 keynote and live on Vision Pro's launch day; primary engineer on the RealityKit runtime.</li>
     <li>Brought FX's <cite>Alien: Earth</cite> environment to Vision Pro with little project structure: got the vendor's models and animation running in headset and hand-authored the dynamic lighting, particles and some of the sound. Featured by Apple in a 2025 Meet with Apple session.</li>
-    <li>Ported the environments to Meta Quest in the new Meta Spatial SDK: rewrote surface and vertex shaders and built the test-bench app used to debug them for Quest and future Meta hardware before Disney+ integration.</li>
+    <li>Ported the environments to Meta Quest in the new Meta Spatial SDK: rewrote surface and vertex shaders, kept color accurate between Vision Pro's P3 displays and Quest, and built the test-bench app used to debug them for Quest and future Meta hardware before Disney+ integration.</li>
     <li>Re-architected environments into downloadable bundles, moving about 90% of their code out of the Disney+ app.</li>
   </ul>
 
   <h3>Immersive video, R&amp;D and AR</h3>
   <ul>
     <li>Built a 180° stereo video format ahead of Apple Immersive Video; rendered, encoded and shipped films in it.</li>
+    <li>Wrote Swift tooling to encode MV-HEVC and Apple Immersive Video on Apple silicon's hardware encoder (VideoToolbox), and streamed Apple Immersive Video over HLS. Used NVIDIA hardware encoders (NVENC) to cut bitrate for other experiences.</li>
     <li>Built a Vision Pro flight-sim test bench measuring which motions feel fun versus cause motion sickness.</li>
     <li>Built the SwiftUI App Clip for Marvel's <cite>Eternals</cite> AR companion app.</li>
   </ul>
@@ -190,7 +191,7 @@
   <h2 id="skills">Skills</h2>
   <dl>
     <dt>Graphics, video and AI</dt>
-    <dd>Metal, RealityKit, Meta Spatial SDK, OpenUSD, shaders, ASTC/KTX, GPU profiling, Gaussian splatting, video encoding, PyTorch, Core ML</dd>
+    <dd>Metal, RealityKit, Meta Spatial SDK, OpenUSD, shaders, ASTC/KTX, GPU profiling, Gaussian splatting, VideoToolbox (MV-HEVC, Apple Immersive Video), NVENC, HLS, P3 and YCbCr color pipelines, PyTorch, Core ML</dd>
     <dt>Languages and tools</dt>
     <dd>Swift, Python, C++, Objective-C, Claude Code, Cursor</dd>
     <dt>Education</dt>
