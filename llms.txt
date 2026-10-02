@@ -46,6 +46,7 @@
 
 - Graphics, video and AI: Metal, RealityKit, Meta Spatial SDK, OpenUSD, shaders, ASTC/KTX, GPU profiling, Gaussian splatting, VideoToolbox (MV-HEVC, Apple Immersive Video), NVENC, HLS, P3 color management, YCbCr pixel formats, PyTorch, Core ML
 - Languages and tools: Swift, Python, C++, Objective-C, Claude Code, Cursor
+- Game engines and DCC tools: Unity, Unreal Engine, Blender, Maya, RenderMan
 
 ## Education
 
