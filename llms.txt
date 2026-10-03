@@ -20,7 +20,6 @@
 - Disney+ immersive viewing environments: led the effort to bring ILM-built 3D worlds into Disney+ as immersive viewing environments, announced in Apple's WWDC 2023 keynote and live on Vision Pro's launch day; primary engineer on the RealityKit runtime.
 - Alien: Earth on Vision Pro: brought FX's Alien: Earth environment to Vision Pro with little project structure; got the outside vendor's models and animation running in headset and hand-authored the dynamic lighting, particles and some of the sound. Featured by Apple in a 2025 Meet with Apple session.
 - Meta Quest port: ported the environments to Meta Quest in the new Meta Spatial SDK; rewrote surface and vertex shaders, kept color accurate between Vision Pro's P3 displays and Quest, and built the test-bench app used to debug them for Quest and future Meta hardware.
-- Downloadable bundles: re-architected the environments into downloadable bundles, moving about 90% of their code out of the Disney+ app.
 - Built a 180-degree stereo video format ahead of Apple Immersive Video; rendered, encoded and shipped films in it.
 - Wrote Swift tooling to encode MV-HEVC and Apple Immersive Video on Apple silicon's hardware encoder (VideoToolbox), and streamed Apple Immersive Video over HLS. Used NVIDIA hardware encoders (NVENC) to cut bitrate for other experiences.
 - Built a Vision Pro flight-sim test bench measuring which motions feel fun versus cause motion sickness.
