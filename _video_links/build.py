@@ -8,6 +8,9 @@ LinkedIn's preview crawler doesn't run JavaScript, so it never follows the forwa
 Each visit is counted in GoatCounter (https://chrisdunaetz.goatcounter.com/) just before the forward.
 Tag links with ?ref=<source> (e.g. ?ref=resume) and the dashboard shows that as the referrer;
 untagged links fall back to the browser's Referer header, which PDFs and apps usually leave empty.
+LinkedIn can't carry ?ref=: it replaces a link with the page's og:url. So each video also gets a
+<slug>/li/ copy whose og:url is itself and whose referrer is fixed to "linkedin"; LinkedIn Featured
+links point there. Both copies count under the same path (/<slug>/), so the dashboard splits them by referrer.
 
 Usage (from this folder): python build.py
 Writes <slug>/index.html at the repo root (served at https://chrisdunaetz.github.io/<slug>/).
@@ -20,6 +23,8 @@ from pathlib import Path
 
 BASE_URL = "https://chrisdunaetz.github.io"
 GOATCOUNTER = "https://chrisdunaetz.goatcounter.com/count"
+# (subfolder, fixed referrer): the main page, plus a copy for LinkedIn Featured.
+VARIANTS = [("", None), ("li/", "linkedin")]
 
 VIDEOS = [
     {
@@ -65,9 +70,10 @@ PAGE = """<!doctype html>
   var go = function () {{ location.replace(target); }};
   if (location.hostname !== "chrisdunaetz.github.io" || navigator.webdriver) return go();
   var q = new URLSearchParams(location.search);
+  var fixedRef = {fixed_ref_js};
   var url = "{goatcounter}?" + new URLSearchParams({{
-    p: location.pathname, t: document.title, q: location.search,
-    r: q.get("ref") || q.get("utm_source") || document.referrer,
+    p: {count_path_js}, t: document.title, q: location.search,
+    r: fixedRef || q.get("ref") || q.get("utm_source") || document.referrer,
     s: [screen.width, screen.height, window.devicePixelRatio || 1].join(","),
     rnd: Math.random().toString(36).slice(2)
   }});
@@ -100,14 +106,14 @@ def main():
     site = Path(__file__).resolve().parent.parent
     (site / "thumbs").mkdir(exist_ok=True)
 
-    for v in VIDEOS:
-        page_url = f"{base}/{v['slug']}/"
+    for v, (sub, fixed_ref) in ((v, variant) for v in VIDEOS for variant in VARIANTS):
+        page_url = f"{base}/{v['slug']}/{sub}"
         target = f"https://www.youtube.com/watch?v={v['youtube_id']}&t={v['start_seconds']}s"
         thumbs = [t for t in (site / "thumbs").glob(f"{v['slug']}.*") if t.suffix in (".jpg", ".png")]
         image_url = (f"{base}/thumbs/{thumbs[0].name}" if thumbs
                      else f"https://i.ytimg.com/vi/{v['youtube_id']}/maxresdefault.jpg")
-        out = site / v["slug"] / "index.html"
-        out.parent.mkdir(exist_ok=True)
+        out = site / v["slug"] / sub / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(PAGE.format(
             title=html.escape(v["title"]),
             description=html.escape(v["description"]),
@@ -116,6 +122,8 @@ def main():
             target=html.escape(target),
             target_js=repr(target).replace("'", '"'),
             goatcounter=GOATCOUNTER,
+            fixed_ref_js=f'"{fixed_ref}"' if fixed_ref else "null",
+            count_path_js=f'"/{v['slug']}/"',
             timestamp=timestamp(v["start_seconds"]),
         ), encoding="utf-8")
         print(f"{page_url}  ->  {target}")

@@ -18,9 +18,10 @@
   var go = function () { location.replace(target); };
   if (location.hostname !== "chrisdunaetz.github.io" || navigator.webdriver) return go();
   var q = new URLSearchParams(location.search);
+  var fixedRef = null;
   var url = "https://chrisdunaetz.goatcounter.com/count?" + new URLSearchParams({
-    p: location.pathname, t: document.title, q: location.search,
-    r: q.get("ref") || q.get("utm_source") || document.referrer,
+    p: "/alien-earth/", t: document.title, q: location.search,
+    r: fixedRef || q.get("ref") || q.get("utm_source") || document.referrer,
     s: [screen.width, screen.height, window.devicePixelRatio || 1].join(","),
     rnd: Math.random().toString(36).slice(2)
   });
