@@ -13,6 +13,7 @@
 <meta property="og:image" content="https://chrisdunaetz.github.io/thumbs/alien-earth.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="Plain-text summary">
+<script data-goatcounter="https://chrisdunaetz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,7 +69,9 @@
     font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     -webkit-text-size-adjust: 100%;
   }
-  main { max-width: 760px; margin: 0 auto; padding: 56px 16px 72px; }
+  main { max-width: 880px; margin: 0 auto; padding: 56px 16px 72px; }
+  /* The video row breaks out of the text column: up to 1120px wide, keeping a 16px gutter. */
+  .breakout { margin-inline: min(0px, max(calc(50% - 560px), calc(50% - 50vw + 24px))); }
   a { color: var(--accent); text-underline-offset: 2px; }
   h1 { font-size: 2.4rem; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 8px; }
   h2 {
@@ -84,7 +87,7 @@
   .links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 20px; padding: 0; list-style: none; }
   .links li { margin: 0; }
   .meta { color: var(--muted); font-size: 0.95rem; }
-  .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
   .video {
     display: block; text-decoration: none; color: inherit;
     background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
@@ -94,10 +97,12 @@
   .video span { display: block; padding: 10px 12px 12px; font-size: 0.95rem; line-height: 1.4; }
   .video strong { display: block; margin-bottom: 2px; }
   .video em { font-style: normal; color: var(--muted); font-size: 0.85rem; }
-  .highlights { list-style: none; padding: 0; }
-  .highlights li {
-    background: var(--accent-soft); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px;
+  .highlights { border: 2px solid var(--accent); border-radius: 6px; padding: 12px 18px 6px; margin: 12px 0 8px; }
+  .highlights h4 {
+    margin: 0 0 6px; color: var(--accent); font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
   }
+  .highlights ul { margin-bottom: 6px; }
   .job { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 12px; align-items: baseline; }
   .job h3 { margin-bottom: 2px; }
   dl { margin: 0; }
@@ -126,9 +131,9 @@
 
 <section aria-labelledby="videos">
   <h2 id="videos">Videos of the work</h2>
-  <div class="videos">
+  <div class="videos breakout">
     <a class="video" href="/vision-pro-environments/">
-      <img src="https://i.ytimg.com/vi/G1FZMo1BMIY/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+      <img src="https://i.ytimg.com/vi/G1FZMo1BMIY/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720">
       <span><strong>Disney+ environments: a tour</strong>I led bringing these ILM-built worlds into Disney+ and was primary engineer on their RealityKit runtime. <em>Walkthrough by Spatial Insider · starts at 3:38</em></span>
     </a>
     <a class="video" href="/alien-earth/">
@@ -147,13 +152,16 @@
 
   <div class="job"><h3>The Walt Disney Company</h3><span class="meta">Senior Software Engineer · 2019–present</span></div>
 
-  <ul class="highlights">
+  <div class="highlights" role="group" aria-labelledby="tech-highlights">
+  <h4 id="tech-highlights">Technical highlights</h4>
+  <ul>
     <li><strong>96 FPS on Meta Quest 3</strong> rendering a 3D environment around a 4K stereo film at 48 FPS, on an XR2 Gen 2 that also runs tracking and passthrough, with about half the peak GPU compute of Vision Pro's M2.</li>
     <li><strong>Under 200 ms from tap to first frame</strong> on average for 800 MB environments on Vision Pro, using GPU-ready ASTC/KTX textures, front-half-first loading and deferred custom-shader compilation.</li>
     <li><strong>Alien: Earth environment</strong> runs dynamic lighting, shadows, skeletal animation, particle simulation, vertex-displacement shaders, anisotropic reflections and volumetric lighting at the same time.</li>
     <li><strong>Foveated Gaussian splatting:</strong> moved a Metal splat renderer onto RealityKit through LowLevelMesh to gain foveated rendering and hybrid rendering with traditional meshes.</li>
     <li><strong>On-device AI:</strong> real-time semantic segmentation with custom PyTorch models on Core ML, composited with the live camera feed in custom Metal shaders.</li>
   </ul>
+  </div>
 
   <h3>Disney+ immersive viewing environments: Apple Vision Pro and Meta Quest</h3>
   <ul>
@@ -201,7 +209,7 @@
 </section>
 
 <footer>
-  <p>Updated October 2026. A plain-text version for search engines and AI assistants is at <a href="/llms.txt">/llms.txt</a>.</p>
+  <p>Updated November 2026. A plain-text version for search engines and AI assistants is at <a href="/llms.txt">/llms.txt</a>.</p>
 </footer>
 
 </main>

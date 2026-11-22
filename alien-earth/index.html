@@ -12,7 +12,22 @@
 <meta property="og:url" content="https://chrisdunaetz.github.io/alien-earth/">
 <meta property="og:image" content="https://chrisdunaetz.github.io/thumbs/alien-earth.png">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("https://www.youtube.com/watch?v=muthEMhOq0Q&t=3493s");</script>
+<script>
+(function () {
+  var target = "https://www.youtube.com/watch?v=muthEMhOq0Q&t=3493s";
+  var go = function () { location.replace(target); };
+  if (location.hostname !== "chrisdunaetz.github.io" || navigator.webdriver) return go();
+  var q = new URLSearchParams(location.search);
+  var url = "https://chrisdunaetz.goatcounter.com/count?" + new URLSearchParams({
+    p: location.pathname, t: document.title, q: location.search,
+    r: q.get("ref") || q.get("utm_source") || document.referrer,
+    s: [screen.width, screen.height, window.devicePixelRatio || 1].join(","),
+    rnd: Math.random().toString(36).slice(2)
+  });
+  try { fetch(url, { keepalive: true, mode: "no-cors", credentials: "omit" }); go(); }
+  catch (e) { new Image().src = url; setTimeout(go, 300); }
+})();
+</script>
 <style>
   :root { color-scheme: light dark; }
   body { font: 16px/1.5 system-ui, sans-serif; margin: 0; padding: 32px 16px; text-align: center; }

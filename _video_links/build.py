@@ -5,6 +5,10 @@ Each page here carries its own Open Graph tags (so LinkedIn keeps the page's own
 and forwards the visitor to YouTube at the right moment with JavaScript.
 LinkedIn's preview crawler doesn't run JavaScript, so it never follows the forward.
 
+Each visit is counted in GoatCounter (https://chrisdunaetz.goatcounter.com/) just before the forward.
+Tag links with ?ref=<source> (e.g. ?ref=resume) and the dashboard shows that as the referrer;
+untagged links fall back to the browser's Referer header, which PDFs and apps usually leave empty.
+
 Usage (from this folder): python build.py
 Writes <slug>/index.html at the repo root (served at https://chrisdunaetz.github.io/<slug>/).
 Custom thumbnails go in ../thumbs/<slug>.jpg or .png (16:9 or 1200x627); until then the YouTube thumbnail is used.
@@ -15,6 +19,7 @@ import html
 from pathlib import Path
 
 BASE_URL = "https://chrisdunaetz.github.io"
+GOATCOUNTER = "https://chrisdunaetz.goatcounter.com/count"
 
 VIDEOS = [
     {
@@ -54,7 +59,22 @@ PAGE = """<!doctype html>
 <meta property="og:url" content="{page_url}">
 <meta property="og:image" content="{image_url}">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace({target_js});</script>
+<script>
+(function () {{
+  var target = {target_js};
+  var go = function () {{ location.replace(target); }};
+  if (location.hostname !== "chrisdunaetz.github.io" || navigator.webdriver) return go();
+  var q = new URLSearchParams(location.search);
+  var url = "{goatcounter}?" + new URLSearchParams({{
+    p: location.pathname, t: document.title, q: location.search,
+    r: q.get("ref") || q.get("utm_source") || document.referrer,
+    s: [screen.width, screen.height, window.devicePixelRatio || 1].join(","),
+    rnd: Math.random().toString(36).slice(2)
+  }});
+  try {{ fetch(url, {{ keepalive: true, mode: "no-cors", credentials: "omit" }}); go(); }}
+  catch (e) {{ new Image().src = url; setTimeout(go, 300); }}
+}})();
+</script>
 <style>
   :root {{ color-scheme: light dark; }}
   body {{ font: 16px/1.5 system-ui, sans-serif; margin: 0; padding: 32px 16px; text-align: center; }}
@@ -95,6 +115,7 @@ def main():
             image_url=image_url,
             target=html.escape(target),
             target_js=repr(target).replace("'", '"'),
+            goatcounter=GOATCOUNTER,
             timestamp=timestamp(v["start_seconds"]),
         ), encoding="utf-8")
         print(f"{page_url}  ->  {target}")
