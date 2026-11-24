@@ -30,14 +30,14 @@ VIDEOS = [
     {
         "slug": "alien-earth",
         "title": "Alien: Earth on Apple Vision Pro, featured by Apple (Meet with Apple, 2025)",
-        "description": "Apple highlights the Alien: Earth environment on Disney+, which Chris Dunaetz brought to Vision Pro.",
+        "description": "Apple highlights the Alien: Earth environment on Disney+, which Chris Dunaetz brought to Apple Vision Pro.",
         "youtube_id": "muthEMhOq0Q",
         "start_seconds": 3493,
     },
     {
         "slug": "vision-pro-environments",
         "title": "Disney+ immersive viewing environments on Apple Vision Pro (walkthrough)",
-        "description": "Spatial Insider's walkthrough of the Disney+ viewing environments on Vision Pro.",
+        "description": "Spatial Insider's walkthrough of the Disney+ viewing environments on Apple Vision Pro.",
         "youtube_id": "G1FZMo1BMIY",
         "start_seconds": 218,
     },

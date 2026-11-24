@@ -9,27 +9,27 @@
 
 ## Technical highlights (Disney)
 
-- 96 FPS on Meta Quest 3 rendering a 3D environment around a 4K stereo film at 48 FPS, on an XR2 Gen 2 that also runs tracking and passthrough, with about half the peak GPU compute of Vision Pro's M2.
-- Under 200 ms from tap to first frame on average for 800 MB environments on Vision Pro, using GPU-ready ASTC/KTX textures, front-half-first loading and deferred custom-shader compilation.
+- 96 FPS on Meta Quest 3 rendering a 3D environment around a 4K stereo film at 48 FPS, on an XR2 Gen 2 that also runs tracking and passthrough, with about half the peak GPU compute of Apple Vision Pro's M2.
+- Under 200 ms from tap to first frame on average for 800 MB environments on Apple Vision Pro, using GPU-ready ASTC/KTX textures, front-half-first loading and deferred custom-shader compilation.
 - The Alien: Earth environment runs dynamic lighting, shadows, skeletal animation, particle simulation, vertex-displacement shaders, anisotropic reflections and volumetric lighting at the same time.
 - Foveated Gaussian splatting: moved a Metal splat renderer onto RealityKit through LowLevelMesh to gain foveated rendering and hybrid rendering with traditional meshes.
-- On-device AI: real-time semantic segmentation with custom PyTorch models on Core ML, composited with the live camera feed in custom Metal shaders.
+- On-device AI prototype: applied transfer learning to a PyTorch DeepLabV3+ segmentation model, converted it to Core ML, and composited its mask onto the full-resolution camera feed in custom Metal shaders.
 
 ## Projects (Disney)
 
-- Disney+ immersive viewing environments: led the effort to bring ILM-built 3D worlds into Disney+ as immersive viewing environments, announced in Apple's WWDC 2023 keynote and live on Vision Pro's launch day; primary engineer on the RealityKit runtime.
-- Alien: Earth on Vision Pro: brought FX's Alien: Earth environment to Vision Pro with little project structure; got the outside vendor's models and animation running in headset and hand-authored the dynamic lighting, particles and some of the sound. Featured by Apple in a 2025 Meet with Apple session.
-- Meta Quest port: ported the environments to Meta Quest in the new Meta Spatial SDK; rewrote surface and vertex shaders (with optimizations such as baking costly procedural math into textures), kept color accurate between Vision Pro's P3 displays and Quest, and built the test-bench app used to debug them for Quest and future Meta hardware.
+- Disney+ immersive viewing environments: led the effort to bring ILM-built 3D worlds into Disney+ as immersive viewing environments, announced in Apple's WWDC 2023 keynote and live on Apple Vision Pro's launch day; primary engineer on the RealityKit runtime.
+- Alien: Earth on Apple Vision Pro: brought FX's Alien: Earth environment to Apple Vision Pro with little project structure; got the outside vendor's models and animation running in headset and hand-authored the dynamic lighting, particles and some of the sound. Featured by Apple in a 2025 Meet with Apple session.
+- Meta Quest port: ported the environments to Meta Quest in the new Meta Spatial SDK; rewrote surface and vertex shaders (with optimizations such as baking costly procedural math into textures), kept color accurate between Apple Vision Pro's P3 displays and Quest, and built the test-bench app used to debug them for Quest and future Meta hardware.
 - Built a 180-degree stereo video format ahead of Apple Immersive Video; rendered and encoded films in it.
 - Wrote Swift tooling to encode MV-HEVC and Apple Immersive Video on Apple silicon's hardware encoder (VideoToolbox), and streamed Apple Immersive Video over HLS. Used NVIDIA hardware encoders (NVENC) to cut bitrate for other experiences.
-- Built a Vision Pro flight-sim test bench measuring which motions feel fun versus cause motion sickness.
+- Built an Apple Vision Pro flight-sim test bench measuring which motions feel fun versus cause motion sickness.
 - Built the SwiftUI App Clip for Marvel's Eternals AR companion app.
 
 ## Videos
 
 - [Disney+ viewing environments walkthrough (Spatial Insider)](https://www.youtube.com/watch?v=G1FZMo1BMIY&t=218s)
 - [Alien: Earth featured by Apple (Meet with Apple, 2025)](https://www.youtube.com/watch?v=muthEMhOq0Q&t=3493s)
-- [WWDC 2023 keynote, Disney+ on Vision Pro](https://www.youtube.com/watch?v=GYkq9Rgoj8E&t=6051s)
+- [WWDC 2023 keynote, Disney+ on Apple Vision Pro](https://www.youtube.com/watch?v=GYkq9Rgoj8E&t=6051s)
 
 ## Earlier experience
 
@@ -38,7 +38,7 @@
 
 ## Talks
 
-- USD Summit, Pixar headquarters (2025): delivering Vision Pro runtime assets via USD in RealityKit.
+- USD Summit, Pixar headquarters (2025): delivering Apple Vision Pro runtime assets via USD in RealityKit.
 - Disgraph 2024 (Disney's internal graphics conference): co-presented the viewing-environment pipeline with ILM.
 
 ## Skills
