@@ -1,6 +1,6 @@
 # Chris Dunaetz
 
-> Senior software engineer who makes demanding workloads run fast on real hardware: shipped real-time 3D on Apple Vision Pro and Meta Quest, and prototyped stereoscopic video and on-device AI, at The Walt Disney Company (2019-present). iOS developer since 2015. Based in the Los Angeles area; open to remote or hybrid roles in Southern California.
+> Senior iOS engineer (since 2015) who shipped real-time 3D on Apple Vision Pro and Meta Quest, and prototyped stereoscopic video and on-device AI, at The Walt Disney Company (2019-present). Based in the Los Angeles area; open to remote or hybrid roles in Southern California.
 
 ## Links
 
